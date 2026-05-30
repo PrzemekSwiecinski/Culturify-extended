@@ -41,11 +41,11 @@ const AddImages: React.FC = () => {
 
       Resizer.imageFileResizer(
         file,
-        800, // Max width
-        600, // Max height
-        "JPEG", // Output format
-        70, // Quality (0-100)
-        0, // Rotation
+        800,
+        600,
+        "JPEG",
+        70,
+        0,
         (resizedFile) => {
           setResizedImage(resizedFile as File);
         },
@@ -74,7 +74,6 @@ const AddImages: React.FC = () => {
 
     try {
       const formData = new FormData();
-      // Używamy przeskalowane zdjęcie, jeśli istnieje, w przeciwnym razie oryginał
       formData.append("image", resizedImage || selectedImage);
       formData.append("description", description);
 
