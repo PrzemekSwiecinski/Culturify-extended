@@ -6,7 +6,7 @@ import CustomAppBar from "../components/CustomAppBar";
 import Footer from "../components/Footer";
 
 interface Eventt {
-  price: number; // Dodane pole
+  price: number;
   id_wydarzenia: number;
   id_organizatora: string;
   typ: string;
