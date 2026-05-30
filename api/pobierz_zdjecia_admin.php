@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die(json_encode(['error' => 'Błąd połączenia z bazą danych']));
 }
 
-$sql = "SELECT nazwa, tekst, id_zdjecia FROM galeria WHERE czy_dodane = 0"; // Pobieramy id_zdjecia, nazwę i tekst
+$sql = "SELECT nazwa, tekst, id_zdjecia FROM galeria WHERE czy_dodane = 0";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
