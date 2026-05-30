@@ -44,7 +44,6 @@ $authToken = $data['authToken'];
 $tresc = $data['tresc'];
 
 
-// Pobranie ID użytkownika na podstawie tokenu
 $stmt = $conn->prepare("SELECT id_uzytkownika FROM uzytkownicy WHERE token_sesji = ?");
 $stmt->bind_param("s", $authToken);
 $stmt->execute();
@@ -59,7 +58,6 @@ $userData = $result->fetch_assoc();
 $id_uzytkownika = $userData['id_uzytkownika'];
 $stmt->close();
 
-// Dodanie komentarza do bazy danych
 $sql = "INSERT INTO komentarze (id_postu, id_użytkownika, tresc, czy_dodany) VALUES (?, ?, ?, 0)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("iis", $id_postu, $id_uzytkownika, $tresc);
