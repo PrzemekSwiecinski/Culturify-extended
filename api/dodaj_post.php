@@ -45,7 +45,6 @@ $kategoria = $data['kategoria'];
 $tresc = $data['tresc'];
 
 
-// Dodanie posta do bazy danych
 $sql = "INSERT INTO posty (id_moderatora, kategoria, tresc, czy_dodany) VALUES (?, ?, ?, 0)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("iss", $id_moderatora, $kategoria, $tresc);
