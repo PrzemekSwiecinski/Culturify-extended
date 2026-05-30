@@ -73,7 +73,6 @@ function OrganizerEvents() {
       });
 
       if (response.ok) {
-        // Usuń token z localStorage po wylogowaniu
         localStorage.removeItem("authToken");
         setAuthToken(null);
         setIsLoggedOut(true);
@@ -98,7 +97,6 @@ function OrganizerEvents() {
       );
 
       if (response.data.success) {
-        // Jeśli usunięcie się powiedzie, odśwież listę wydarzeń
         const updatedEvents = eventts.filter((eventt) => eventt.id !== eventId);
         setEventts(updatedEvents);
       } else {
@@ -181,7 +179,6 @@ function OrganizerEvents() {
           </Typography>
           <Typography variant="body1">Nazwa: {eventt.nazwa}</Typography>
           <Typography variant="body1">Opis: {eventt.opis}</Typography>
-          {/* Przycisk do usuwania wydarzenia */}
           <Button
             onClick={() => handleDeleteEvent(eventt.id)}
             variant="contained"
