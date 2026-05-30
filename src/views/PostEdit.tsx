@@ -106,7 +106,7 @@ function PostEdit() {
   };
   useEffect(() => {
     const token = localStorage.getItem("authToken");
-    setAuthToken(token ? token : null); // zabezpieczenie
+    setAuthToken(token ? token : null);
 
     fetchModerators();
     fetchOrders();
