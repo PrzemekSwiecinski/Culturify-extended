@@ -25,7 +25,6 @@ if ($result->num_rows > 0) {
     $secondaryColor = $row['secondaryColor'];
     $textColor = $row['textColor'];
 
-    // Funkcja do rozjaśniania koloru
     function lightenColor($hex, $percent) {
         $hex = str_replace('#', '', $hex);
         if (strlen($hex) == 3) {
@@ -43,7 +42,6 @@ if ($result->num_rows > 0) {
 
     }
 
-    // Funkcja do przyciemniania koloru
       function darkenColor($hex, $percent) {
         $hex = str_replace('#', '', $hex);
         if (strlen($hex) == 3) {
