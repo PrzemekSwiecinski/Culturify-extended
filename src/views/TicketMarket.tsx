@@ -21,9 +21,9 @@ import Footer from "../components/Footer";
 
 interface Ticket {
   id_biletu: string;
-  id_wydarzenia: string; // Upewnij się, że to pole odpowiada id_wydarzenia z bazy danych
+  id_wydarzenia: string;
   id_uzytkownika: string;
-  nazwa: string; // Zaktualizuj odpowiednio nazwę
+  nazwa: string;
   data: string;
   godzina: string;
   cena: number;
@@ -181,7 +181,7 @@ function TicketMarket() {
           )
         );
 
-        handleModalOpen(); // Otwieramy okno modalne po zakupie biletu
+        handleModalOpen();
       } else {
         console.error("Nie udało się kupić biletu:", response.statusText);
       }
@@ -238,8 +238,8 @@ function TicketMarket() {
               sx={{
                 marginLeft: "8%",
                 marginRight: "2%",
-                width: { xs: 30, sm: 40, md: 50 }, // Zmieniamy rozmiar logo na podstawie szerokości ekranu
-                height: { xs: 30, sm: 40, md: 50 }, // Zmieniamy rozmiar logo na podstawie szerokości ekranu
+                width: { xs: 30, sm: 40, md: 50 },
+                height: { xs: 30, sm: 40, md: 50 },
               }}
               alt="logo"
               src="/assets/logo.png"
@@ -251,7 +251,7 @@ function TicketMarket() {
               component="a"
               sx={{
                 mr: 2,
-                display: { xs: "flex", md: "flex" }, // Ustawiamy display: "flex" na urządzeniach mobilnych
+                display: { xs: "flex", md: "flex" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".1rem",
@@ -263,7 +263,6 @@ function TicketMarket() {
               Culturify
             </Typography>
 
-            {/* Menu mobilne */}
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -273,7 +272,7 @@ function TicketMarket() {
                 onClick={handleOpenNavMenu}
                 color="inherit"
               >
-                <span>☰</span> {/* Ikona menu */}
+                <span>☰</span>
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -303,7 +302,6 @@ function TicketMarket() {
               </Menu>
             </Box>
 
-            {/* Menu desktopowe */}
             <Box
               sx={{
                 flexGrow: 1,
