@@ -109,7 +109,6 @@ function AboutUs() {
     const authToken = localStorage.getItem("authToken");
     setAuthToken(authToken);
 
-    // Pobieranie koszyka z localStorage
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
       try {
