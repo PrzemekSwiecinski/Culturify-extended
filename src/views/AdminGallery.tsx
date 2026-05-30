@@ -96,7 +96,6 @@ function AdminGallery() {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        // Usunięcie zaakceptowanego zdjecia z listy
         setImages((prevImages) =>
           prevImages.filter((image) => image.id_zdjecia !== id_zdjecia)
         );
