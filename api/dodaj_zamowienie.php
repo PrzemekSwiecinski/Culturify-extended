@@ -37,7 +37,6 @@ if (!isset($data['cena']) || !is_numeric($data['cena'])) {
 $authToken = $data['authToken'];
 $cena = (int)$data['cena'];
 
-// Pobranie ID użytkownika na podstawie tokenu
 $stmt = $conn->prepare("SELECT id_uzytkownika FROM uzytkownicy WHERE token_sesji = ?");
 $stmt->bind_param("s", $authToken);
 $stmt->execute();
@@ -52,7 +51,6 @@ $userData = $result->fetch_assoc();
 $id_uzytkownika = $userData['id_uzytkownika'];
 $stmt->close();
 
-// Dodanie zamówienia do bazy danych
 $sql = "INSERT INTO zamowienia (id_uzytkownika, cena) VALUES (?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ii", $id_uzytkownika, $cena);
