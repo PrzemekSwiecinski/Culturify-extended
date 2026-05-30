@@ -135,7 +135,7 @@ function ModMainPage() {
     fetchPosts();
     fetchComments();
 
-    setOpenSnackbar(true); // Setujemy pokazanie powiadomienia przy każdym wejściu na stronę
+    setOpenSnackbar(true);
   }, []);
 
   const handleAcceptPost = async (postId: number) => {
