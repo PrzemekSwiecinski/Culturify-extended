@@ -8,7 +8,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "culturify";
-$assets_dir = "/assets/"; // Ścieżka do folderu public/assets
+$assets_dir = "/assets/";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die(json_encode(['error' => 'Błąd połączenia z bazą danych']));
 }
 
-$sql = "SELECT nazwa, tekst FROM galeria WHERE czy_dodane = 1"; // Dodajemy warunek WHERE
+$sql = "SELECT nazwa, tekst FROM galeria WHERE czy_dodane = 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
         $images[] = [
               'src' => $assets_dir . $row['nazwa'],
               'text' => $row['tekst'],
-              'name' => $row['nazwa'], // <- Tutaj kolumna 'nazwa' staje się 'name'
+              'name' => $row['nazwa'],
           ];
     }
     echo json_encode($images);
