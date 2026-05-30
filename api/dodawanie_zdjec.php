@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image']) && isset($_
         exit;
     }
 
-    $originalImageName = basename($image['name']); // Oryginalna nazwa pliku
-    $target_file = $upload_dir . $originalImageName; // Ścieżka z oryginalną nazwą
+    $originalImageName = basename($image['name']);
+    $target_file = $upload_dir . $originalImageName;
 
      $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
